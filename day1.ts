@@ -13,3 +13,19 @@ function alertName(): void {
 //与 void 的区别是，undefined 和 null 是所有类型的子类型。也就是说 undefined 类型的变量，可以赋值给 number 类型的变量：
 let u: undefined = undefined;
 let n: null = null;
+
+//任意值
+//如果是一个普通类型，在赋值过程中改变类型是不被允许的：
+//但如果是 any 类型，则允许被赋值为任意类型。
+let myFavoriteNumber: any = 'seven';
+myFavoriteNumber = 7;
+// 任意值的属性和方法§
+// 在任意值上访问任何属性都是允许的：
+let anyThing: any = { myName: '俞酱', firstName: '帅'};
+console.log(anyThing.myName);
+console.log(anyThing.myName.firstName);
+let anyThing1: any = 'Tom';
+anyThing1.setName('Jerry');
+anyThing1.setName('Jerry').sayHello();
+anyThing1.myName.setFirstName('Cat');
+console.log(anyThing1)
